@@ -1,6 +1,6 @@
-# Project Euler solutions for Spreemo code challenge
+# Project Euler solutions
 
-👉 The source code for the 3 problems chosen to solve are located in `lib/euler`
+👉 The source code for the problems are located in `lib/euler`
 
 Run the tests:
 ```
