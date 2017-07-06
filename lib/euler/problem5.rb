@@ -1,5 +1,7 @@
 module Euler
   class Problem5
+    attr_accessor :current_sum, :current_number
+
     def self.question
       "What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?"
     end
@@ -18,12 +20,17 @@ module Euler
       smallest_multiple = from
 
       (from..to).each do |number|
-        sum = smallest_multiple
-        sum += smallest_multiple until sum % number == 0
-        smallest_multiple = sum
+        @current_sum = smallest_multiple
+        @current_number = number
+        @current_sum += smallest_multiple until evenly_divisible?
+        smallest_multiple = @current_sum
       end
 
       smallest_multiple
+    end
+
+    def evenly_divisible?
+      @current_sum % @current_number == 0
     end
   end
 end
